@@ -1,0 +1,117 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(243, 240, 233, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+  height: var(--header-height);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: var(--space-md);
+}
+
+.header__logo {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-deep-blue);
+  white-space: nowrap;
+}
+
+.header__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--color-deep-blue);
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-right: -0.5rem;
+}
+
+.header__toggle .material-symbols-outlined {
+  font-size: 1.5rem;
+}
+
+.header__nav {
+  display: none;
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  background-color: var(--color-warm-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-md);
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.header__nav.is-open {
+  display: flex;
+}
+
+.header__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.header__list a {
+  display: block;
+  padding: 0.6rem 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: color 0.15s ease;
+}
+
+.header__list a:hover {
+  color: var(--color-sage);
+}
+
+.header__cta {
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--space-xs);
+}
+
+@media (min-width: 900px) {
+  .header__toggle {
+    display: none;
+  }
+
+  .header__nav {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-lg);
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .header__list {
+    flex-direction: row;
+    gap: var(--space-md);
+  }
+
+  .header__list a {
+    padding: 0.35rem 0;
+  }
+
+  .header__cta {
+    width: auto;
+    margin-top: 0;
+    padding: 0.65rem 1.15rem;
+    font-size: 0.875rem;
+  }
+}
