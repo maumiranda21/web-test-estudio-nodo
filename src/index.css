@@ -1,0 +1,318 @@
+/* ESTUDIO NODO — Global styles */
+
+:root {
+  /* Palette — light */
+  --color-deep-blue: #172c3b;
+  --color-warm-beige: #d2bfa5;
+  --color-warm-white: #f3f0e9;
+  --color-sage: #87958a;
+  --color-white: #ffffff;
+  --color-text: #172c3b;
+  --color-text-muted: #5a6a75;
+  --color-border: rgba(23, 44, 59, 0.12);
+  --color-surface: #f3f0e9;
+  --color-surface-alt: #ebe7df;
+  --color-card: #f7f4ee;
+  --color-input-bg: #ffffff;
+
+  /* Typography */
+  --font-sans: 'Manrope', 'DM Sans', system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+
+  /* Layout */
+  --max-width: 1120px;
+  --header-height: 4.5rem;
+  --radius: 12px;
+  --radius-lg: 30px;
+  --radius-btn: 999px;
+}
+
+/* Dark theme */
+html.theme-dark {
+  --color-deep-blue: #e8e4dc;
+  --color-warm-beige: #c4b095;
+  --color-warm-white: #121a22;
+  --color-sage: #9aab9f;
+  --color-white: #1a2430;
+  --color-text: #e8e4dc;
+  --color-text-muted: #a8b0b8;
+  --color-border: rgba(232, 228, 220, 0.12);
+  --color-surface: #121a22;
+  --color-surface-alt: #1a2430;
+  --color-card: #1e2a38;
+  --color-input-bg: #1a2430;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 6vw, 3.85rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.6rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.8vw, 1.5rem);
+}
+
+h4 {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+}
+
+p {
+  max-width: 44rem;
+  font-size: 1.0625rem;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-deep-blue);
+  outline-offset: 3px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  user-select: none;
+}
+
+.image-placeholder {
+  background-color: var(--color-surface-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: var(--space-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.image-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.6rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease, backdrop-filter 0.25s ease;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.btn-primary {
+  background: rgba(23, 44, 59, 0.55);
+  color: #f3f0e9;
+  border-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #172c3b 0%, #2a4a5e 50%, #172c3b 100%);
+  border-color: transparent;
+  backdrop-filter: none;
+  box-shadow: 0 6px 20px rgba(23, 44, 59, 0.35);
+}
+
+.btn-secondary {
+  background: rgba(243, 240, 233, 0.25);
+  color: #f3f0e9;
+  border-color: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, rgba(243, 240, 233, 0.95) 0%, #e8e0d4 100%);
+  color: #172c3b;
+  border-color: transparent;
+  backdrop-filter: none;
+}
+
+.btn-accent {
+  background: rgba(210, 191, 165, 0.7);
+  color: #172c3b;
+  border-color: rgba(210, 191, 165, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-accent:hover {
+  background: linear-gradient(135deg, #d2bfa5 0%, #c4a888 50%, #d2bfa5 100%);
+  border-color: transparent;
+  backdrop-filter: none;
+  box-shadow: 0 4px 16px rgba(210, 191, 165, 0.4);
+}
+
+.section .btn-primary {
+  background: rgba(23, 44, 59, 0.9);
+  border-color: transparent;
+  color: #f3f0e9;
+}
+
+html.theme-dark .section .btn-primary {
+  background: rgba(210, 191, 165, 0.9);
+  color: #121a22;
+}
+
+.section .btn-primary:hover {
+  background: linear-gradient(135deg, #172c3b 0%, #2a4a5e 50%, #0f1f2a 100%);
+  color: #f3f0e9;
+}
+
+html.theme-dark .section .btn-primary:hover {
+  background: linear-gradient(135deg, #d2bfa5 0%, #e0d0b8 50%, #c4a888 100%);
+  color: #121a22;
+}
+
+.section .btn-secondary {
+  background: rgba(23, 44, 59, 0.08);
+  color: var(--color-text);
+  border-color: rgba(23, 44, 59, 0.25);
+}
+
+html.theme-dark .section .btn-secondary {
+  background: rgba(232, 228, 220, 0.08);
+  border-color: rgba(232, 228, 220, 0.25);
+}
+
+.section .btn-secondary:hover {
+  background: linear-gradient(135deg, #172c3b 0%, #2a4a5e 100%);
+  color: #f3f0e9;
+  border-color: transparent;
+}
+
+html.theme-dark .section .btn-secondary:hover {
+  background: linear-gradient(135deg, #e8e4dc 0%, #d2bfa5 100%);
+  color: #121a22;
+}
+
+.section {
+  padding-block: var(--space-2xl);
+}
+
+.section-title {
+  margin-bottom: var(--space-md);
+}
+
+.section-intro {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xl);
+  max-width: 38rem;
+  font-size: 1.1rem;
+}
+
+.section-divider {
+  border: none;
+  height: 1px;
+  background: var(--color-border);
+  margin: 0 auto;
+  max-width: var(--max-width);
+  width: calc(100% - 2 * var(--space-md));
+}

@@ -1,0 +1,70 @@
+.floating-controls {
+  position: fixed;
+  right: 1rem;
+  bottom: 1.25rem;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.45rem;
+  background: rgba(243, 240, 233, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 999px;
+  box-shadow: 0 8px 28px rgba(23, 44, 59, 0.14), 0 2px 8px rgba(23, 44, 59, 0.06);
+  border: 1px solid rgba(23, 44, 59, 0.08);
+}
+
+.theme-dark .floating-controls {
+  background: rgba(23, 44, 59, 0.88);
+  border-color: rgba(243, 240, 233, 0.1);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+.floating-controls__btn {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-deep-blue);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+.theme-dark .floating-controls__btn {
+  color: var(--color-warm-beige);
+}
+
+.floating-controls__btn:hover {
+  background: rgba(23, 44, 59, 0.1);
+}
+
+.theme-dark .floating-controls__btn:hover {
+  background: rgba(243, 240, 233, 0.12);
+}
+
+.floating-controls__btn .material-symbols-outlined {
+  font-size: 1.35rem;
+}
+
+.floating-controls__btn:disabled,
+.floating-controls__btn:not(.is-visible) {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.floating-controls__btn.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (min-width: 768px) {
+  .floating-controls {
+    right: 1.5rem;
+    bottom: 1.75rem;
+  }
+}
